@@ -80,14 +80,13 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<AdapterRecyclerVie
             cardView = itemView.findViewById(R.id.cardView);
             imagemCabecalho = itemView.findViewById(R.id.img);
 
-            //pegando a altura do display
+            //Código para expandir o CardView
             WindowManager windowManager = (WindowManager)context.getSystemService(Context.WINDOW_SERVICE);
             DisplayMetrics dimension = new DisplayMetrics();
             windowManager.getDefaultDisplay().getMetrics(dimension);
 
             final int height = dimension.heightPixels;
 
-            //ah entender o que faz
             cardView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
 
                 @Override
@@ -110,18 +109,10 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<AdapterRecyclerVie
                 }
             });
 
-           /* btnExpand.setOnClickListener(new View.OnClickListener() {
-
-                @Override
-                public void onClick(View v) {
-                    toggleCardViewnHeight(height);
-
-                }
-            });*/
-
         }
 
 
+        //Método do bind para setar os valores aos compentes(não faz parte do código para expandir o CardView
         public void bind(Grade grade){
             diaSemana.setText(grade.getDiaSemana());
             txtCurso.setText(grade.getNomeCurso());
@@ -130,6 +121,7 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<AdapterRecyclerVie
             imagemCabecalho.setImageResource(grade.getImagem());
         }
 
+        //Métodos para a expansão do CardView
         private void toggleCardViewnHeight(int height) {
 
             if (cardView.getHeight() == minHeight) {
