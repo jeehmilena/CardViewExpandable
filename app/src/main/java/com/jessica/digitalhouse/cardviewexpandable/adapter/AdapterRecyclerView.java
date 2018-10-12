@@ -23,6 +23,8 @@ import com.jessica.digitalhouse.cardviewexpandable.model.Grade;
 
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class AdapterRecyclerView extends RecyclerView.Adapter<AdapterRecyclerView.ViewHolder> {
 
     private List<Grade> gradeList;
@@ -67,9 +69,11 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<AdapterRecyclerVie
         private CardView cardView;
         private TextView diaSemana;
         private ImageView imagemCabecalho;
+        private CircleImageView imgUser;
+        private View divider;
 
         @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
-        public ViewHolder(View itemView) {
+        public ViewHolder(final View itemView) {
             super(itemView);
 
             diaSemana = itemView.findViewById(R.id.txtDiaSemana);
@@ -79,6 +83,8 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<AdapterRecyclerVie
             btnExpand = itemView.findViewById(R.id.btnExpand);
             cardView = itemView.findViewById(R.id.cardView);
             imagemCabecalho = itemView.findViewById(R.id.img);
+            imgUser = itemView.findViewById(R.id.circleImageView);
+            divider = itemView.findViewById(R.id.viewDiviver);
 
             //Código para expandir o CardView
             WindowManager windowManager = (WindowManager)context.getSystemService(Context.WINDOW_SERVICE);
@@ -106,6 +112,12 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<AdapterRecyclerVie
                 @Override
                 public void onClick(View v) {
                     toggleCardViewnHeight(height);
+                    imgUser.setVisibility(itemView.VISIBLE);
+                    txtCurso.setVisibility(itemView.VISIBLE);
+                    txtProfessor.setVisibility(itemView.VISIBLE);
+                    txtHorario.setVisibility(itemView.VISIBLE);
+                    divider.setVisibility(itemView.VISIBLE);
+
                 }
             });
 

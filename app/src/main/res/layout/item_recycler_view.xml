@@ -18,8 +18,8 @@
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="8dp">
+            android:layout_height="match_parent"
+            android:paddingBottom="20dp">
 
             <ImageView
                 android:id="@+id/img"
@@ -46,7 +46,6 @@
                 android:layout_marginTop="8dp"
                 android:text="Dia da semana"
                 android:textSize="21sp"
-                android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/btnExpand"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/img" />
@@ -63,7 +62,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/img" />
 
             <View
-                android:id="@+id/view2"
+                android:id="@+id/viewDiviver"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_gravity="center"
@@ -72,10 +71,11 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
-                android:background="#9c9c9c"
+                android:background="#c9c9c9"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtDiaSemana" />
+                app:layout_constraintTop_toBottomOf="@+id/txtDiaSemana"
+                android:visibility="gone"/>
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/circleImageView"
@@ -85,8 +85,9 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:src="@drawable/user"
+                android:visibility="gone"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view2" />
+                app:layout_constraintTop_toBottomOf="@+id/viewDiviver" />
 
             <TextView
                 android:id="@+id/nomeCurso"
@@ -100,10 +101,11 @@
                 android:text="Nome Curso"
                 android:textSize="17sp"
                 android:textStyle="bold"
+                android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/circleImageView"
-                app:layout_constraintTop_toBottomOf="@+id/view2" />
+                app:layout_constraintTop_toBottomOf="@+id/viewDiviver" />
 
             <TextView
                 android:id="@+id/nomeProfessor"
@@ -116,6 +118,7 @@
                 android:layout_marginTop="8dp"
                 android:text="Nome Professor"
                 android:textSize="17sp"
+                android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/circleImageView"
                 app:layout_constraintTop_toBottomOf="@+id/nomeCurso" />
@@ -131,6 +134,7 @@
                 android:layout_marginTop="8dp"
                 android:text="Horarios"
                 android:textSize="17sp"
+                android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/circleImageView"
                 app:layout_constraintTop_toBottomOf="@+id/nomeProfessor" />
